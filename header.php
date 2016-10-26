@@ -81,7 +81,7 @@ $ts_tumblr 	 		   = get_theme_mod('global_tumblr_link');
 			<div class="search-icon">
 				<div class="search-click ts-search"><i class="fa fa-search"></i></div>
 				<div class="search-box">
-					<div class="close"> × </div>
+					<div class="close"><i class="fa fa-close"></i> </div>
 					<form action="#" class="search-form" method="get" role="search">
 						<label>
 							<span class="screen-reader-text">Search for:</span>

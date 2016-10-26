@@ -611,9 +611,9 @@ function global_customize_register( $wp_customize ) {
         ) );
 
         $wp_customize->add_control(new Global_Customize_Heading($wp_customize, 'global_service_page_header '.$i, array(
+            'label'			=> esc_html__( 'Page & Icon Option', 'global' ).$i,
             'settings'		=> 'global_service_page_header'.$i,
             'section'		=> 'global_service_page_section',
-            'label'			=> esc_html__( 'Page & Icon Option'.$i, 'global' ),
             'priority'      =>  $i+5
         ) ) );
 
@@ -629,7 +629,7 @@ function global_customize_register( $wp_customize ) {
 
         $wp_customize->add_control( 'global_service_icon'.$i.'', array(
             'type' => 'text',
-            'label' => esc_html__( ' Service icon'.$i, 'global'),
+            'label' => esc_html__( ' Service icon', 'global').$i,
             'description' => $link,
             'section' => 'global_service_page_section',
             'setting' => 'global_service_icon'.$i.'',
@@ -780,7 +780,7 @@ function global_customize_register( $wp_customize ) {
         $wp_customize->add_control(new Global_Customize_Heading($wp_customize, 'global_team_member_heading'.$i, array(
             'settings'		=> 'global_team_member_heading'.$i,
             'section'		=> 'global_team_section',
-            'label'			=> esc_html__( 'Team Member '.$i, 'global' ),
+            'label'			=> esc_html__( 'Team Member ', 'global' ).$i,
         ) ) );
 
         $wp_customize->add_setting('global_team_designation'.$i,
@@ -807,7 +807,7 @@ function global_customize_register( $wp_customize ) {
 
         $wp_customize->add_control('global_page_team_member'.$i,
             array(
-                'label'    => esc_html__( 'Choose Page For Team'.$i , 'global' ),
+                'label'    => esc_html__( 'Choose Page For Team' , 'global' ).$i,
                 'section'  => 'global_team_section',
                 'setting'  => 'global_page_team_member'.$i,
                 'type'     => 'dropdown-pages',
@@ -1050,7 +1050,7 @@ function global_customize_register( $wp_customize ) {
         $wp_customize->add_control( new Global_Customize_Heading($wp_customize, 'global_counter_heading'.$i, array(
             'settings'		        => 'global_counter_heading'.$i,
             'section'		        => 'global_counter_section',
-            'label'			        => esc_html__( 'Counter Option '.$i, 'global' ),
+            'label'			        => esc_html__( 'Counter Option ', 'global' ).$i,
         ) ) );
 
         $wp_customize->add_setting( 'global_counter'.$i.'_title', array(
@@ -1060,7 +1060,7 @@ function global_customize_register( $wp_customize ) {
 
         $wp_customize->add_control( 'global_counter'.$i.'_title', array(
             'type' 				     =>  'text',
-            'label'                  =>  esc_html__('Counter Title '.$i.'', 'global'),
+            'label'                  =>  esc_html__('Counter Title ', 'global').$i,
             'settings' 			     =>  'global_counter'.$i.'_title',
             'section'                =>  'global_counter_section',
         ) );
@@ -1071,7 +1071,7 @@ function global_customize_register( $wp_customize ) {
 
         $wp_customize->add_control( 'global_counter_value'.$i.'_title', array(
             'type' 				     =>  'number',
-            'label'                  =>  esc_html__('Counter Value'.$i.'', 'global'),
+            'label'                  =>  esc_html__('Counter Value', 'global').$i,
             'settings' 			     =>  'global_counter_value'.$i.'_title',
             'section'                =>  'global_counter_section',
         ) );
@@ -1088,7 +1088,7 @@ function global_customize_register( $wp_customize ) {
 
         $wp_customize->add_control( 'global_counter_icon'.$i.'', array(
             'type' => 'text',
-            'label' => esc_html__( 'Counter icon'.$i, 'global'),
+            'label' => esc_html__( 'Counter icon', 'global').$i,
             'description' => $link,
             'section' => 'global_counter_section',
             'setting' => 'global_counter_icon'.$i.'',
