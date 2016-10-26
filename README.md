@@ -1,2 +1,2 @@
 # global
-A Business Theme
+business theme
