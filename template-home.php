@@ -21,14 +21,7 @@ global_counter();
 
 global_team_member();
 
-global_testimonial();
-
 global_blog();
 
-
-?>
-
-
-<?php
 get_footer();
 ?>

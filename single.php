@@ -11,7 +11,10 @@ get_header();
 
 $sidebar_layout = get_post_meta( $post->ID, 'global_page_specific_layout', true );
 
-?>
+$global_et_to = get_theme_mod('global_breadcrumbs_activate', 1);
+
+if($global_et_to == 1){
+	?>
 	<div class="ts-breadcrumbs">
 		<div class="ts-container">
 			<div class="ts-breadcrumbs-block ts-clearblock">
@@ -23,6 +26,8 @@ $sidebar_layout = get_post_meta( $post->ID, 'global_page_specific_layout', true 
 			</div>
 		</div>
 	</div>
+<?php }?>
+
 	<div id="content" class="site-content">
 	<div class="ts-container">
 

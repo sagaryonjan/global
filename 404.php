@@ -7,25 +7,23 @@
  * @package Global
  */
 
-get_header(); ?>
-    <div class="ts-breadcrumb-banner">
+get_header();
 
-        <div data-stellar-background-ratio="0.5" class="ts-parallax-image"
-             style="background-image: url(<?php echo esc_url(get_theme_mod('global_default_background_image')); ?>);  background-size:cover; background-repeat: no-repeat;">
-            <div class="ts-container">
+$global_et_to = get_theme_mod('global_breadcrumbs_activate', 1);
+if($global_et_to == 1){
+    ?>
+    <div class="ts-breadcrumbs">
+        <div class="ts-container">
+            <div class="ts-breadcrumbs-block ts-clearblock">
+                <div class="ts-default-title"><?php the_title(); ?></div>
 
-                <div id="global--breadcrumbs">
-                    <div class="ts-default-title"><?php esc_html_e('404 Error', 'global'); ?></div>
-
-                    <div class="ts-top-breadcrumbs">
-                        <?php global_breadcrumbs(); ?>
-                    </div>
-
+                <div class="ts-menu-breadcrumbs">
+                    <?php global_breadcrumbs(); ?>
                 </div>
-
             </div>
         </div>
     </div>
+<?php }?>
 
     <div id="content" class="site-content">
         <div class="ts-container">
