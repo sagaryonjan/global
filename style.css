@@ -2645,34 +2645,19 @@ figure.ts-single-image {
 	line-height: 0;
 }
 
-.ts-image .entry-header {
+.ts-image .entry-meta {
 	position: absolute;
 	left: 0;
-	top: 50px;
-}
+	bottom: 50px;
+	background-color: #fff;
+	padding: 6px 8px;
+	line-height: 18px;
+} 
 
-.ts-image .entry-header h1 {
+h2.entry-title {
 	display: inline-block;
-	background-color: #D65108;
-	padding: 10px 20px 10px;
-	margin: 0;
-	color: #fff;
+	padding: 18px 0 0;
 	font-size: 22px;
-	line-height: 32px; 
-}
-
-.ts-image .entry-header h2 {
-	display: inline-block;
-	background-color: #D65108;
-	padding: 10px 20px 10px;
-	margin: 0;
-	color: #fff;
-	font-size: 22px;
-	line-height: 32px; 
-}
-
-.ts-image .entry-header h2 a { 
-	color: #fff;
 }
 
 .entry-content p {
@@ -2690,17 +2675,14 @@ a.post-edit-link {
 	box-shadow: 1px 1px 1px 0 #ccc;
 }
 
-span.posted-on {
-	padding: 8px;
-	display: inline-block;
-	background: #fff;
+span.posted-on { 
+	display: inline-block; 
 	font-size: 14px; 
+	margin-right: 8px; 
 }
 
-span.byline {
-	padding: 6px;
-	display: inline-block;
-	background: #fff;
+span.byline { 
+	display: inline-block; 
 	font-size: 14px; 
 }
 
@@ -2711,6 +2693,10 @@ span.byline {
 /*================================
 =            TS: Post            =
 ================================*/
+h1.entry-title {
+	font-size: 22px;
+	margin: 18px 0 0;
+}
 
 span.cat-links {
 	display: block;
@@ -2822,10 +2808,17 @@ span.tags-links a {
 =                 Default Comments                 =
 =============================================*/
 h2.comments-title {
-	margin-bottom: 24px;
-	font-size: 18px;
-	text-transform: uppercase;
-	font-weight: 500;
+	margin-bottom: 20px;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #eee;
+    border-style: double;
+}
+
+ol.comment-list {
+    margin: 0;
 }
 
 article.comment-body {
@@ -2865,6 +2858,10 @@ a.comment-edit-link {
 	margin-left: 14px;
 }
 
+a.comment-edit-link:hover {
+	color: #D65108; 
+}
+
 a.comment-edit-link:before {
 	content: '\f013';
 	font-family: 'FontAwesome';
@@ -2879,8 +2876,7 @@ a.comment-edit-link:before {
 
 h3#reply-title {
 	color: #222;
-	font-size: 20px;
-	margin-bottom: 16px;
+	font-size: 20px; 
 	text-transform: uppercase;
 	font-weight: 500;
 }
@@ -2892,6 +2888,7 @@ p.comment-notes {
 p.logged-in-as {
 	padding: 14px;
 	font-size: 14px;
+	margin-bottom: 0;
 }
 
 p.comment-form-comment label {
@@ -2955,6 +2952,18 @@ a#cancel-comment-reply-link:before {
 
 
 /*=====  End of Default Comments  ======*/
+
+/*=================================
+=            indexpage            =
+=================================*/
+span.comments-link {
+    display: block;
+    padding-bottom: 18px;
+}
+
+
+/*=====  End of indexpage  ======*/
+
 
 
 /*=============================================
