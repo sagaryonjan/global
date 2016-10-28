@@ -10,14 +10,15 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<div class="ts-image <?php echo has_post_thumbnail()?'':'no-image'; ?>">
+	<?php if(has_post_thumbnail()): ?>
 
-	<div class="ts-image">
 		<figure class="ts-single-image">
-			<?php if(has_post_thumbnail()):
+			<?php
 				the_post_thumbnail();
-			endif;
 			?>
-		</figure> 
+		</figure>
+		<?php endif; ?>
 		<?php
 		if ( 'post' === get_post_type() ) : ?>
 			<div class="entry-meta">

@@ -220,7 +220,7 @@ if (!function_exists('global_counter')) :
 
             $ts_background_image = get_theme_mod('global_background_image');
             $ts_data = [];
-            for ($i = 1; $i <= 5; $i++) {
+            for ($i = 1; $i <= 4; $i++) {
                 $ts_data['title' . $i] = get_theme_mod('global_counter' . $i . '_title');
                 $ts_data['value' . $i] = get_theme_mod('global_counter_value' . $i . '_title');
                 $ts_data['icon' . $i] = get_theme_mod('global_counter_icon' . $i);
@@ -230,7 +230,7 @@ if (!function_exists('global_counter')) :
                      style="background-image: url(<?php echo $ts_background_image; ?>);  background-size:cover;background-repeat: no-repeat;">
                     <div class="ts-container">
                         <div class="ts-counter ts-section ts-clearblock">
-                            <?php for ($i = 1; $i <= 5; $i++) { ?>
+                            <?php for ($i = 1; $i <= 4; $i++) { ?>
                                 <div class="ts-counter-single">
                                     <i class="<?php echo $ts_data['icon' . $i]; ?>"></i>
                                     <span class="counter"><?php echo $ts_data['value' . $i]; ?></span>
