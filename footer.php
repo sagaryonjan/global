@@ -58,7 +58,7 @@ $background_color = get_theme_mod('global_footer_background_color');
 
 			</div>
 
-	 <?php //global_footer_copyright_info(); ?>
+	 <?php global_footer_copyright_info(); ?>
 
 		</footer>
 
