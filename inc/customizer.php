@@ -294,48 +294,6 @@ function global_customize_register( $wp_customize ) {
         'settings'              =>  'global_breadcrumbs_activate'
 	) );
 
-	//page background image
-	$wp_customize->add_section( 'global_background_image_section', array(
-        'priority'              =>  10,
-        'title'                 =>  esc_html__('Top Banner Image', 'global'),
-        'panel'                 =>  'general_panel'
-	) );
-
-	$wp_customize->add_setting( 'global_page_background_image', array(
-        'capability'            => 'edit_theme_options',
-        'sanitize_callback'     => 'esc_url_raw'
-	) );
-
-	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'global_page_background_image', array(
-        'label'                 => esc_html__('Upload background  image for page', 'global'),
-        'section'               => 'global_background_image_section',
-        'settings'              => 'global_page_background_image',
-	) ) );
-
-	//post background image
-	$wp_customize->add_setting( 'global_post_background_image', array(
-        'capability'            => 'edit_theme_options',
-        'sanitize_callback'     => 'esc_url_raw'
-	) );
-
-	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'global_post_background_image', array(
-        'label'                 => esc_html__('Upload background image for post', 'global'),
-        'section'               => 'global_background_image_section',
-        'settings'              => 'global_post_background_image',
-	) ) );
-
-	//default background image
-	$wp_customize->add_setting( 'global_default_background_image', array(
-        'capability'            => 'edit_theme_options',
-        'sanitize_callback'     => 'esc_url_raw'
-	) );
-
-	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'global_default_background_image', array(
-        'label'                 =>  esc_html__('Upload background image for default', 'global'),
-        'section'               =>  'global_background_image_section',
-        'settings'              =>  'global_default_background_image',
-	) ) );
-
 	$wp_customize->add_section( 'global_default_sidebar_section', array(
         'priority'              =>  15,
         'title'                 =>  esc_html__('Default Sidebar Settings', 'global'),
@@ -862,65 +820,6 @@ function global_customize_register( $wp_customize ) {
             )
         );
 
-    }
-
-    //testimonial
-    $wp_customize->add_section( 'global_testimonial_section', array(
-        'priority'          	 =>  35,
-        'title'             	 =>  esc_html__(' Testimonial ', 'global'),
-        'panel'                  => 'global_front_page_option'
-    ) );
-
-    $wp_customize->add_setting( 'global_testimonial_heading', array(
-        'sanitize_callback'	     =>  'global_sanitize_text'
-    ) );
-    $wp_customize->add_control(new Global_Customize_Heading($wp_customize, 'global_testimonial_heading',
-            array(
-                'settings'		=> 'global_testimonial_heading',
-                'section'		=> 'global_testimonial_section',
-                'label'			=> esc_html__( 'Testimonial title and page', 'global' ),
-    ) ) );
-
-    $wp_customize->add_setting( 'global_testimonial_checkbox', array(
-        'default' 				=>  '',
-        'capability' 			=>  'edit_theme_options',
-        'sanitize_callback' 	=>  'global_checkbox_sanitize'
-    ) );
-
-    $wp_customize->add_control( 'global_testimonial_checkbox', array(
-        'type' 				    =>  'checkbox',
-        'label' 			    =>  esc_html__( 'Enable Testimonial', 'global' ),
-        'settings' 			    =>  'global_testimonial_checkbox',
-        'section' 			    =>  'global_testimonial_section',
-        'priority'              =>  4
-    ) );
-
-    $wp_customize->add_setting( 'global_testimonial_title', array(
-        'capability'             =>  'edit_theme_options',
-        'sanitize_callback'	     =>  'global_sanitize_text'
-    ) );
-
-    $wp_customize->add_control( 'global_testimonial_title', array(
-        'type' 				     =>  'text',
-        'label'                  =>  esc_html__('Change Testiomial title', 'global'),
-        'settings' 			     =>  'global_testimonial_title',
-        'section'                =>  'global_testimonial_section',
-    ) );
-
-    for( $i = 1; $i <= 5; $i++ ) {
-        $wp_customize->add_setting('global_page_testimonial' . $i,
-            array(
-                'default' => '',
-                'capability' => 'edit_theme_options',
-                'sanitize_callback' => 'global_sanitize_integer'
-            ));
-
-        $wp_customize->add_control('global_page_testimonial' . $i, array(
-            'label' => esc_html__('Add Testimonial Page ', 'global') . $i,
-            'section' => 'global_testimonial_section',
-            'setting' => 'global_page_testimonial' . $i,
-            'type' => 'dropdown-pages',
-        ));
     }
 
     //blog section

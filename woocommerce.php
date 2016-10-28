@@ -14,25 +14,22 @@
 
 get_header();
 $sidebar_layout = get_post_meta($post->ID, 'global_page_specific_layout', true);
-?>
-	<div class="ts-breadcrumb-banner">
-		<div data-stellar-background-ratio="0.5" class="ts-parallax-image" style="background-image: url(<?php echo esc_url(get_theme_mod('global_page_background_image'));?>);  background-size:cover; background-position: center center;">
-			<div class="ts-container">
+$global_et_to = get_theme_mod('global_breadcrumbs_activate', 1);
 
-				<div id="global--breadcrumbs">
-					<div class="ts-default-title"><?php the_title(); ?></div>
+if($global_et_to == 1){
+	?>
+	<div class="ts-breadcrumbs">
+		<div class="ts-container">
+			<div class="ts-breadcrumbs-block ts-clearblock">
+				<div class="ts-default-title"><?php the_title(); ?></div>
 
-					<div class="ts-top-breadcrumbs">
-						<?php global_breadcrumbs(); ?>
-						<!--<a href="http://localhost/global" class="breadcrumb_home_text">Home</a>
-						<span class="breadcrumb_separator"> / </span>
-						<a href="http://localhost/global/category/business/">Business</a>-->
-					</div>
+				<div class="ts-menu-breadcrumbs">
+					<?php global_breadcrumbs(); ?>
 				</div>
-
 			</div>
 		</div>
 	</div>
+<?php }?>
 
 	<div id="content" class="site-content">
 	<div class="ts-container">

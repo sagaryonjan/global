@@ -150,7 +150,7 @@ if (!function_exists('global_breadcrumbs')) :
                         $post_type = get_post_type_object(get_post_type());
                         $slug = $post_type->rewrite;
                         echo '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>';
-                        if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
+                        if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . the_title() . $after;
                     }
                     else {
 
@@ -159,7 +159,7 @@ if (!function_exists('global_breadcrumbs')) :
                         $cats = get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
                         if ($showCurrent == 0) $cats = preg_replace("#^(.+)\s$delimiter\s$#", "$1", $cats);
                         echo $cats;
-                        if ($showCurrent == 1) echo $before . get_the_title() . $after;
+                        if ($showCurrent == 1) echo $before . the_title() . $after;
                     }
 
                 }
@@ -177,12 +177,12 @@ if (!function_exists('global_breadcrumbs')) :
                     echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
                     echo '<a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a>';
 
-                    if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
+                    if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . the_title() . $after;
 
                 }
                 elseif (is_page() && !$post->post_parent) {
 
-                    if ($showCurrent == 1) echo $before . get_the_title() . $after;
+                    if ($showCurrent == 1) echo $before . the_title() . $after;
 
                 }
                 elseif (is_page() && $post->post_parent) {
@@ -192,7 +192,7 @@ if (!function_exists('global_breadcrumbs')) :
 
                     while ($parent_id) {
                         $page = get_page($parent_id);
-                        $breadcrumbs[] = '<a href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a>';
+                        $breadcrumbs[] = '<a href="' . get_permalink($page->ID) . '">' . the_title($page->ID) . '</a>';
                         $parent_id = $page->post_parent;
                     }
 
@@ -203,7 +203,7 @@ if (!function_exists('global_breadcrumbs')) :
                         if ($i != count($breadcrumbs) - 1) echo ' ' . $delimiter . ' ';
                     }
 
-                    if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
+                    if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . the_title() . $after;
 
                 }
                 elseif (is_tag()) {

@@ -9,14 +9,14 @@
 
 get_header();
 $default_sidebar_layout = get_theme_mod('global_default_sidebar_setting', 'right-sidebar');
-?>
 
-
-
+$global_et_to = get_theme_mod('global_breadcrumbs_activate', 1);
+if($global_et_to == 1){
+	?>
 	<div class="ts-breadcrumbs">
 		<div class="ts-container">
 			<div class="ts-breadcrumbs-block ts-clearblock">
-				<div class="ts-default-title"><?php the_archive_title(); ?></div>
+				<div class="ts-default-title"><?php the_title(); ?></div>
 
 				<div class="ts-menu-breadcrumbs">
 					<?php global_breadcrumbs(); ?>
@@ -24,6 +24,7 @@ $default_sidebar_layout = get_theme_mod('global_default_sidebar_setting', 'right
 			</div>
 		</div>
 	</div>
+<?php }?>
 
 	<div id="content" class="site-content">
 	<div class="ts-container">
