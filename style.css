@@ -2626,6 +2626,10 @@ body.left-sidebar #primary {
 	float: right;
 }
 
+body.no-sidebar-full-width #primary {
+	width: 100%;
+}
+
 
 /*=====  End of Primary/Secondary  ======*/
 
@@ -2654,8 +2658,21 @@ figure.ts-single-image {
 	margin: 0;
 	color: #fff;
 	font-size: 22px;
-	line-height: 32px;
-	box-shadow: 1px 1px 1px 0 #ccc;
+	line-height: 32px; 
+}
+
+.ts-image .entry-header h2 {
+	display: inline-block;
+	background-color: #D65108;
+	padding: 10px 20px 10px;
+	margin: 0;
+	color: #fff;
+	font-size: 22px;
+	line-height: 32px; 
+}
+
+.ts-image .entry-header h2 a { 
+	color: #fff;
 }
 
 .entry-content p {
@@ -2677,16 +2694,14 @@ span.posted-on {
 	padding: 8px;
 	display: inline-block;
 	background: #fff;
-	font-size: 14px;
-	box-shadow: 1px 1px 1px 0 #ccc;
+	font-size: 14px; 
 }
 
 span.byline {
-	padding: 8px;
+	padding: 6px;
 	display: inline-block;
 	background: #fff;
-	font-size: 14px;
-	box-shadow: 1px 1px 1px 0 #ccc;
+	font-size: 14px; 
 }
 
 
