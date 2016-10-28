@@ -106,19 +106,8 @@ function global_scripts() {
 	wp_enqueue_style( 'global-responsive', get_template_directory_uri() . '/css/responsive.css' );
 
 	//Register swiper
-	wp_enqueue_style( 'swiper', get_template_directory_uri() . '/css/swiper.css' );
-
-
-	//Register jquery
-	wp_enqueue_script( 'jquery-mb-YTPlayer', get_template_directory_uri() . '/js/jquery.mb.YTPlayer.js', array( 'jquery' ) );
-
-
-	wp_enqueue_script( 'jQuery-scrollSpeed', get_template_directory_uri() . '/js/jQuery.scrollSpeed.js', array( 'jquery' ) );
-
-	wp_enqueue_script( 'jquery-stellar-min', get_template_directory_uri() . '/js/jquery.stellar.min.js', array( 'jquery' ) );
-
-	wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/jquery-2.2.3.js', array( 'jquery' ) );
-
+	wp_enqueue_style( 'swiper', get_template_directory_uri() . '/css/swiper.css' );  
+	
 	wp_enqueue_script( 'masonry', get_template_directory_uri() . '/js/masonry.pkgd.js', array( 'jquery' ) );
 
 	wp_enqueue_script( 'news-ticker', get_template_directory_uri() . '/js/newsTicker.js', array( 'jquery' ) );

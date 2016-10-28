@@ -73,9 +73,9 @@ $ts_tumblr 	 		   = get_theme_mod('global_tumblr_link');
 							}
 				echo "</li>";
 						endwhile;
-                                            wp_reset_postdata();
+                    wp_reset_postdata();
 			echo "</ul>";
-?>
+			?>
 			</div>
 			<?php if($ts_search_option == 1): ?>
 			<div class="search-icon">

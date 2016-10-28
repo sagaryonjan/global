@@ -17,35 +17,16 @@ jQuery(document).ready(function($){
         $(window).scroll(function() {
             stickyNav();
         });
-    }
-
-
-
+    } 
 
     $('.search-icon .search-click').click(function() {
         $('.search-box').addClass('active');
     });
     $('.search-box .close').click(function() {
         $('.search-box').removeClass('active');
-    });
+    });  
 
-
-    $('.ts-menu-icon').click(function() {
-        $('.ts-main-navigation').toggleClass('visible');
-        if($(this).children('.fa').hasClass('fa-navicon'))
-        {
-            $(this).children('.fa').removeClass('fa-navicon');
-            $(this).children('.fa').addClass('fa-close');
-        }
-        else{
-            $(this).children('.fa').removeClass('fa-close');
-            $(this).children('.fa').addClass('fa-navicon');
-        }
-    });
-
-    $('.player').mb_YTPlayer();
-
-    $(window).stellar();
+   // $(window).stellar();
 
 // Main-Slider
     var swiper = new Swiper('.swiper-container', {
@@ -57,16 +38,7 @@ jQuery(document).ready(function($){
         loop: true,
         effect: 'fade',
         speed: 1400
-    });
-
-// Team-Member
-// var ts_team_slider = new Swiper('.ts-team-slider', {
-//     slidesPerView: 4,
-//     spaceBetween: 25,
-//     autoplay: 6500,
-//     speed: 600,
-//     preventClicks: true
-// });
+    }); 
 
     var ts_team_slider = new Swiper('.ts-team-slider', {
         pagination: '.swiper-pagination',
@@ -78,8 +50,6 @@ jQuery(document).ready(function($){
     });
 
 
-
-
     var ts_review_slider = new Swiper('.ts-testimonials-slider', {
         pagination: '.swiper-pagination',
         slidesPerView: 1,
@@ -89,25 +59,6 @@ jQuery(document).ready(function($){
         autoplay: 4000,
         speed: 700
     });
-// var swiper1 = new Swiper('.swiper-container1', {
-//     pagination: '.swiper-pagination',
-//     paginationClickable: true, 
-//     slidesPerView: 1,
-//     spaceBetween: 0,
-//     loop: true,
-//     autoplay: 3000,
-//     speed: 900,
-// }); 
-
-// Review-Slider
-// var swiper = new Swiper('.swiper-container', {  
-//     nextButton: '.swiper-button-next',
-//     prevButton: '.swiper-button-prev',
-//     slidesPerView: 1,
-//     spaceBetween: 0,
-//     loop: true,  
-//     speed: 900,  
-// }); 
 
 // Top Scroll
     $(window).scroll(function() {
