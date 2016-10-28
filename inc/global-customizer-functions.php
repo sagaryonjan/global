@@ -373,18 +373,12 @@ if (!function_exists('global_portfolio')) :
                                             <?php
                                             the_post_thumbnail('large');
                                             ?>
+                                            <div class="ts-bg"></div>
                                         </figure>
-                                    <?php endif; ?>
+                                    <?php endif; ?> 
 
-                                    <ul class="ts-dtl-icon">
-                                        <li><i class="fa fa-search"></i></li>
-                                        <li><i class="fa fa-link"></i></li>
-                                    </ul>
-                                    <div class="ts-portfolio-hover">
-                                        <h6><?php the_title(); ?></h6>
+                                    <a class="ts-btn" href="<?php the_permalink(); ?>">Read More</a> 
 
-                                        <p><?php the_excerpt(); ?></p>
-                                    </div>
                                 </div>
                             <?php endwhile;
                             wp_reset_postdata();
@@ -393,66 +387,6 @@ if (!function_exists('global_portfolio')) :
                     </div>
                 </div>
             <?php }
-        endif;
-    }
-endif;
-
-//global testimonial function
-if (!function_exists('global_testimonial')) :
-    function global_testimonial()
-    {
-        $ts_testimonial_option = get_theme_mod('global_testimonial_checkbox');
-        if ($ts_testimonial_option == 1):
-            $ts_testimonial_title = get_theme_mod('global_testimonial_title');
-                ?>
-                <div data-stellar-background-ratio="0.5" class="ts-testimonial-ps-skills ts-section" style="background-image: url(images/resview-img.png);  background-size:cover;background-repeat: no-repeat;">
-                    <div class="ts-container">
-                        <div class="ts-testimonials">
-                            <?php if(!empty($ts_testimonial_title)): ?>
-                            <div class="ts-title ts-title-white">
-                                <h4><?php echo $ts_testimonial_title; ?></h4>
-                            </div>
-                            <?php endif; ?>
-
-                            <div class="ts-testimonials-block">
-                                <div class="ts-testimonials-slider">
-                                    <div class="swiper-wrapper">
-                                        <?php
-                              for ($i = 1; $i <= 6; $i++) {
-                                      $ts_data['team_page' . $i] = get_theme_mod('global_page_testimonial' . $i);
-                                          if(!empty($ts_data['team_page' . $i])):
-                                                $ts_team__member_page = new WP_Query(array(
-                                                    'post_type' => array('page'),
-                                                    'page_id' => $ts_data['team_page' . $i]
-                                                ));
-                                                ?>
-                                              <?php if ($ts_team__member_page->have_posts()) :
-                                              while ($ts_team__member_page->have_posts()) : $ts_team__member_page->the_post(); ?>
-                                                <div class="swiper-slide">
-                                                    <div class="ts-testimonials-single">
-                                                        <p><?php the_excerpt(); ?></p>
-                                                        <h6><?php the_title(); ?></h6>
-                                                    </div>
-                                                    <?php if (has_post_thumbnail()) : ?>
-                                                        <figure class="ts-testimonials-img">
-                                                            <?php
-                                                            the_post_thumbnail('large');
-                                                            ?>
-                                                        </figure>
-                                                    <?php endif; ?>
-                                                </div>
-                                              <?php endwhile;
-                                              wp_reset_postdata();
-                                          endif;
-                                      endif;
-                                        } ?>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <?php
         endif;
     }
 endif;
@@ -495,15 +429,15 @@ if (!function_exists('global_blog')) :
                                         </figure>
                                     <?php endif; ?>
 
-                                    <span><a href="#"><i
-                                                class="fa fa-comments-o"></i><?php comments_popup_link(' No Comment', '1', '%'); ?>
-                                        </a></span>
+                                    <span>
+                                        <a href="#"><i class="fa fa-comments-o"></i><?php comments_popup_link(' No Comment', '1', '%'); ?></a>
+                                    </span>
 
                                     <div class="ts-blog-desc">
                                         <h6><a href="<?php the_permalink(); ?>"
                                                title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h6>
 
-                                        <p><?php the_excerpt(); ?></p>
+                                        <?php the_excerpt(); ?>
                                         <a class="ts-btn" href="<?php the_permalink() ?>">Read More</a>
                                     </div>
                                 </div>
